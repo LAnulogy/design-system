@@ -9,6 +9,7 @@ import {
   Text,
   Page,
   PrimaryButton,
+  StatusIndicator,
 } from "..";
 
 const primaryMenu = [
@@ -106,7 +107,7 @@ export const _Page = () => (
       </Breadcrumbs>
     }
     title="Materials Overview"
-    headerContent={<PrimaryButton type="informative">Beta</PrimaryButton>}
+    headerContent={<StatusIndicator type="informative">Beta</StatusIndicator>}
   >
     <>
       <Text fontFamily="mono" fontSize="small">
@@ -147,4 +148,19 @@ export const NoBreadcrumbs = () => (
       </>
     </Page>
   </ApplicationFrame>
+);
+
+export const NoBackground = () => (
+  <Page
+    breadcrumbs={
+      <Breadcrumbs>
+        <Link href="/">Home</Link>
+        <Link href="/">Materials</Link>
+      </Breadcrumbs>
+    }
+    title="Materials Overview"
+    headerProps={{
+      background: "none",
+    }}
+  />
 );
