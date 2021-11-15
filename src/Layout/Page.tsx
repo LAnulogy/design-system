@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Box } from "../Box";
 import { Flex } from "../Flex";
 import { FlexProps } from "../Flex/Flex";
@@ -12,6 +11,7 @@ type PageProps = FlexProps & {
   children?: React.ReactNode;
   headerContent?: React.ReactNode;
   headerProps?: BoxProps;
+  unstyledHeaderBackground?: boolean;
 };
 
 export const Page: React.FC<PageProps> = ({
@@ -20,6 +20,7 @@ export const Page: React.FC<PageProps> = ({
   children,
   headerContent,
   headerProps,
+  unstyledHeaderBackground = false,
   ...rest
 }) => (
   <Flex flexDirection="column" {...rest}>
@@ -27,6 +28,7 @@ export const Page: React.FC<PageProps> = ({
       breadcrumbs={breadcrumbs}
       title={title}
       background={headerProps?.background}
+      unstyledBackground={unstyledHeaderBackground}
       {...headerProps}
     >
       {headerContent}

@@ -16,7 +16,22 @@ export const DefaultBackground = () => (
   </Header>
 );
 
-export const NoBackground = () => (
+export const UnstyledBackground = () => (
+  <Header
+    unstyledBackground
+    breadcrumbs={
+      <Breadcrumbs>
+        <Link href="/">Home</Link>
+        <Link href="/">Materials</Link>
+      </Breadcrumbs>
+    }
+    title="Materials Overview"
+  >
+    <StatusIndicator type="informative">Beta</StatusIndicator>
+  </Header>
+);
+
+export const CustomBackground = () => (
   <Header
     breadcrumbs={
       <Breadcrumbs>
@@ -25,8 +40,11 @@ export const NoBackground = () => (
       </Breadcrumbs>
     }
     title="Materials Overview"
-    background="none"
-  />
+    background="#98FB98"
+    unstyledBackground
+  >
+    <StatusIndicator type="informative">Beta</StatusIndicator>
+  </Header>
 );
 
 export default {

@@ -8,6 +8,7 @@ import { Heading1 } from "../Type";
 type HeaderProps = BoxProps & {
   breadcrumbs?: React.ReactNode;
   title?: string;
+  unstyledBackground?: boolean;
   children?: React.ReactNode;
 };
 
@@ -43,6 +44,7 @@ const Header: React.FC<HeaderProps> = ({
   background = "whiteGrey",
   breadcrumbs,
   title,
+  unstyledBackground = false,
   children,
   ...rest
 }) => (
@@ -58,7 +60,7 @@ const Header: React.FC<HeaderProps> = ({
         )}
       </Flex>
     </Box>
-    <BackgroundTriangles zIndex={1} />
+    {!unstyledBackground && <BackgroundTriangles zIndex={1} />}
   </Box>
 );
 
